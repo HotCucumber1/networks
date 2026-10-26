@@ -6,3 +6,4 @@ set_property(GLOBAL PROPERTY USE_FOLDERS ON)
 
 add_executable(dns_resolver dns_resolver/dns_resolver.cpp)
 add_executable(smtp_client smtp_client/smtp_client.cpp)
+add_executable(web_server web_server/webserver.cpp)
