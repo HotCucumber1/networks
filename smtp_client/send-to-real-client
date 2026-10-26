@@ -1,0 +1,19 @@
+#!/bin/bash
+
+export SMTP_PASSWORD='my-password'
+
+./smtp_client \
+  --server smtp.mail.ru \
+  --port 587 \
+  --tls starttls \
+  --auth plain \
+  --user 'user@mail.ru' \
+  --password-env SMTP_PASSWORD \
+  --from 'from@mail.ru' \
+  --to 'to@mail.ru' \
+  --subject "SMTP test from my smtp" \
+  --body "Hello! Testing my C++ SMTP client." \
+  --attach report.txt \
+  --attach img.png
+
+unset SMTP_PASSWORD
