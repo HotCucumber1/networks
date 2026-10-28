@@ -1,0 +1,57 @@
+
+===== Рабочие процессы до сбоя =====
+    PID    PPID NLWP CMD
+ 381658  381654    5 build/server -q -i 1
+ 381659  381654    5 build/server -q -i 1
+
+===== Нагрузка 30000 запросов; во время неё kill -9 одного рабочего процесса =====
+kill -9 381658
+load test: 30000 requests (up to 200 concurrent) + 0 silent connections -> 127.0.0.1:5555
+successful: 29989, connection errors: 11, bad replies: 0
+latency, ms: min=1.43 avg=3.88 p99=7.85 max=14.15
+time: 0.881 s (responses received in 0.881 s), throughput: 34028 requests/s
+(обрываться могут только запросы, которые в момент kill -9 были в работе у убитого процесса)
+
+===== Рабочие процессы после перезапуска =====
+    PID    PPID NLWP CMD
+ 381659  381654    5 build/server -q -i 1
+ 381678  381654    5 build/server -q -i 1
+
+===== Повторная нагрузка — сервер полностью работоспособен =====
+load test: 5000 requests (up to 500 concurrent) + 0 silent connections -> 127.0.0.1:5555
+successful: 5000, connection errors: 0, bad replies: 0
+latency, ms: min=7.02 avg=12.17 p99=14.52 max=15.00
+time: 0.155 s (responses received in 0.155 s), throughput: 32291 requests/s
+код завершения сервера: 0
+
+===== Вывод сервера =====
+00:16:41.386 [master] starting: Server of Dmitriy Rybakov (pid=381654, port=5555, processes=2, threads each=4, timeout=10 s)
+00:16:41.386 [master] socket: listening socket created (fd=6)
+00:16:41.387 [master] bind: socket bound to 0.0.0.0:5555
+00:16:41.388 [master] listen: waiting for connections (backlog=4096)
+00:16:41.388 [master] fork: worker process p1 started (pid=381658)
+00:16:41.388 [master] fork: worker process p2 started (pid=381659)
+00:16:41.388 [master] started worker processes: 2 × 4 threads (Ctrl+C to stop)
+00:16:41.388 [p1    ] worker process ready (pid=381658, threads=4)
+00:16:41.389 [p2    ] worker process ready (pid=381659, threads=4)
+00:16:43.333 [master] worker process p1 (pid=381658) killed by signal SIGKILL
+00:16:43.333 [master] respawning worker process p1
+00:16:43.333 [master] fork: worker process p1 started (pid=381678)
+00:16:43.333 [p1    ] worker process ready (pid=381678, threads=4)
+00:16:43.386 [master] STATISTICS: active=171 accepted=13478 processed=13296 errors=0 (timeouts=0) rejected=0 avg_time=0.115 ms
+00:16:44.386 [master] STATISTICS: active=0 accepted=30000 processed=29989 errors=0 (timeouts=0) rejected=0 avg_time=0.126 ms
+00:16:45.265 [master] received signal SIGINT
+00:16:45.265 [master] graceful shutdown started: SIGTERM to all worker processes (2)
+00:16:45.266 [p2    ] received SIGTERM — stopping accept loop
+00:16:45.266 [p2    ] close: listening socket closed, draining active connections: 0
+00:16:45.266 [p1    ] received SIGTERM — stopping accept loop
+00:16:45.266 [p1    ] close: listening socket closed, draining active connections: 0
+00:16:45.266 [p2    ] all pool threads finished, worker process exiting
+00:16:45.266 [master] worker process p2 (pid=381659) exited with code 0
+00:16:45.266 [p1    ] all pool threads finished, worker process exiting
+00:16:45.266 [master] worker process p1 (pid=381678) exited with code 0
+00:16:45.266 [master] all worker processes terminated
+00:16:45.266 [master]   p1: active=0 accepted=11510 processed=11499 errors=0 (timeouts=0) rejected=0 avg_time=0.138 ms
+00:16:45.266 [master]   p2: active=0 accepted=23490 processed=23490 errors=0 (timeouts=0) rejected=0 avg_time=0.122 ms
+00:16:45.266 [master] TOTAL STATISTICS: active=0 accepted=35000 processed=34989 errors=0 (timeouts=0) rejected=0 avg_time=0.127 ms
+00:16:45.266 [master] all sockets closed, server stopped

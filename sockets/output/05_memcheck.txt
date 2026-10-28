@@ -1,0 +1,86 @@
+
+===== valgrind: valgrind --trace-children=yes --leak-check=full --show-leak-kinds=all --track-fds=yes --error-exitcode=1 build/server -q -i 0 =====
+сервер не поднялся
+load test: 2000 requests (up to 1000 concurrent) + 3 silent connections -> 127.0.0.1:5555
+successful: 0, connection errors: 2000, bad replies: 0
+silent: closed by server 0 (avg after 0.00 s), otherwise 3
+time: 0.052 s (responses received in 0.052 s), throughput: 0 requests/s
+./sockets/demo.sh: line 96: kill: (380234) - No such process
+код завершения сервера: 127
+
+===== valgrind: вывод сервера =====
+./sockets/demo.sh: line 92: valgrind: command not found
+
+===== asan: build-asan/server -q -i 0 =====
+load test: 2000 requests (up to 1000 concurrent) + 3 silent connections -> 127.0.0.1:5555
+successful: 2000, connection errors: 0, bad replies: 0
+latency, ms: min=11.06 avg=20.65 p99=33.52 max=33.60
+silent: closed by server 3 (avg after 10.01 s), otherwise 0
+time: 10.009 s (responses received in 0.056 s), throughput: 35893 requests/s
+код завершения сервера: 0
+
+===== asan: вывод сервера =====
+00:16:21.143 [master] starting: Server of Dmitriy Rybakov (pid=381151, port=5555, processes=2, threads each=4, timeout=10 s)
+00:16:21.143 [master] socket: listening socket created (fd=6)
+00:16:21.144 [master] bind: socket bound to 0.0.0.0:5555
+00:16:21.145 [master] listen: waiting for connections (backlog=4096)
+00:16:21.145 [master] fork: worker process p1 started (pid=381155)
+00:16:21.145 [master] fork: worker process p2 started (pid=381156)
+00:16:21.145 [master] started worker processes: 2 × 4 threads (Ctrl+C to stop)
+00:16:21.146 [p1    ] worker process ready (pid=381155, threads=4)
+00:16:21.146 [p2    ] worker process ready (pid=381156, threads=4)
+00:16:31.254 [p1.w01] #1 TIMEOUT: request not fully received within 10000 ms — disconnecting
+00:16:31.254 [p1.w02] #3 TIMEOUT: request not fully received within 10000 ms — disconnecting
+00:16:31.254 [p2.w01] #2 TIMEOUT: request not fully received within 10000 ms — disconnecting
+00:16:31.255 [master] received signal SIGINT
+00:16:31.255 [master] graceful shutdown started: SIGTERM to all worker processes (2)
+00:16:31.255 [p1    ] received SIGTERM — stopping accept loop
+00:16:31.255 [p1    ] close: listening socket closed, draining active connections: 0
+00:16:31.255 [p2    ] received SIGTERM — stopping accept loop
+00:16:31.255 [p2    ] close: listening socket closed, draining active connections: 0
+00:16:31.255 [p1    ] all pool threads finished, worker process exiting
+00:16:31.255 [p2    ] all pool threads finished, worker process exiting
+00:16:31.258 [master] worker process p2 (pid=381156) exited with code 0
+00:16:31.258 [master] worker process p1 (pid=381155) exited with code 0
+00:16:31.258 [master] all worker processes terminated
+00:16:31.258 [master]   p1: active=0 accepted=1055 processed=1053 errors=2 (timeouts=2) rejected=0 avg_time=0.051 ms
+00:16:31.258 [master]   p2: active=0 accepted=948 processed=947 errors=1 (timeouts=1) rejected=0 avg_time=0.073 ms
+00:16:31.258 [master] TOTAL STATISTICS: active=0 accepted=2003 processed=2000 errors=3 (timeouts=3) rejected=0 avg_time=0.061 ms
+00:16:31.258 [master] all sockets closed, server stopped
+
+===== tsan: setarch x86_64 -R build-tsan/server -q -i 0 =====
+load test: 2000 requests (up to 1000 concurrent) + 3 silent connections -> 127.0.0.1:5555
+successful: 2000, connection errors: 0, bad replies: 0
+latency, ms: min=4.76 avg=24.14 p99=38.18 max=38.32
+silent: closed by server 3 (avg after 10.01 s), otherwise 0
+time: 10.009 s (responses received in 0.062 s), throughput: 32258 requests/s
+код завершения сервера: 0
+
+===== tsan: вывод сервера =====
+00:16:31.273 [master] starting: Server of Dmitriy Rybakov (pid=381547, port=5555, processes=2, threads each=4, timeout=10 s)
+00:16:31.273 [master] socket: listening socket created (fd=6)
+00:16:31.274 [master] bind: socket bound to 0.0.0.0:5555
+00:16:31.275 [master] listen: waiting for connections (backlog=4096)
+00:16:31.275 [master] fork: worker process p1 started (pid=381551)
+00:16:31.275 [master] fork: worker process p2 started (pid=381553)
+00:16:31.276 [master] started worker processes: 2 × 4 threads (Ctrl+C to stop)
+00:16:31.276 [p1    ] worker process ready (pid=381551, threads=4)
+00:16:31.276 [p2    ] worker process ready (pid=381553, threads=4)
+00:16:41.379 [p2.w01] #2 TIMEOUT: request not fully received within 10000 ms — disconnecting
+00:16:41.379 [p1.w01] #8 TIMEOUT: request not fully received within 10000 ms — disconnecting
+00:16:41.380 [p2.w04] #1 TIMEOUT: request not fully received within 10000 ms — disconnecting
+00:16:41.380 [master] received signal SIGINT
+00:16:41.380 [master] graceful shutdown started: SIGTERM to all worker processes (2)
+00:16:41.380 [p1    ] received SIGTERM — stopping accept loop
+00:16:41.380 [p1    ] close: listening socket closed, draining active connections: 0
+00:16:41.380 [p2    ] received SIGTERM — stopping accept loop
+00:16:41.380 [p2    ] close: listening socket closed, draining active connections: 0
+00:16:41.381 [p1    ] all pool threads finished, worker process exiting
+00:16:41.381 [p2    ] all pool threads finished, worker process exiting
+00:16:41.382 [master] worker process p1 (pid=381551) exited with code 0
+00:16:41.382 [master] worker process p2 (pid=381553) exited with code 0
+00:16:41.382 [master] all worker processes terminated
+00:16:41.382 [master]   p1: active=0 accepted=1217 processed=1216 errors=1 (timeouts=1) rejected=0 avg_time=0.069 ms
+00:16:41.382 [master]   p2: active=0 accepted=786 processed=784 errors=2 (timeouts=2) rejected=0 avg_time=0.067 ms
+00:16:41.382 [master] TOTAL STATISTICS: active=0 accepted=2003 processed=2000 errors=3 (timeouts=3) rejected=0 avg_time=0.068 ms
+00:16:41.382 [master] all sockets closed, server stopped

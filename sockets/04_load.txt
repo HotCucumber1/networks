@@ -1,0 +1,67 @@
+
+===== loadtest: 1000 одновременных + 5 молчащих =====
+load test: 1000 requests (up to 1000 concurrent) + 5 silent connections -> 127.0.0.1:5555
+successful: 1000, connection errors: 0, bad replies: 0
+latency, ms: min=16.45 avg=2457.81 p99=10008.32 max=10008.72
+silent: closed by server 5 (avg after 12.01 s), otherwise 0
+time: 20.018 s (responses received in 10.013 s), throughput: 100 requests/s
+
+===== loadtest: 20000 запросов, окно 500 =====
+load test: 20000 requests (up to 500 concurrent) + 0 silent connections -> 127.0.0.1:5555
+successful: 20000, connection errors: 0, bad replies: 0
+latency, ms: min=3.08 avg=12.31 p99=14.99 max=15.78
+time: 0.603 s (responses received in 0.603 s), throughput: 33175 requests/s
+
+===== SIGINT =====
+код завершения сервера: 0
+
+===== Вывод сервера =====
+00:15:29.194 [master] starting: Server of Dmitriy Rybakov (pid=380024, port=5555, processes=2, threads each=4, timeout=10 s)
+00:15:29.194 [master] socket: listening socket created (fd=6)
+00:15:29.196 [master] bind: socket bound to 0.0.0.0:5555
+00:15:29.196 [master] listen: waiting for connections (backlog=4096)
+00:15:29.196 [master] fork: worker process p1 started (pid=380028)
+00:15:29.196 [master] fork: worker process p2 started (pid=380029)
+00:15:29.196 [master] started worker processes: 2 × 4 threads (Ctrl+C to stop)
+00:15:29.196 [p1    ] worker process ready (pid=380028, threads=4)
+00:15:29.196 [p2    ] worker process ready (pid=380029, threads=4)
+00:15:30.194 [master] STATISTICS: active=249 accepted=1005 processed=756 errors=0 (timeouts=0) rejected=0 avg_time=0.080 ms
+00:15:31.194 [master] STATISTICS: active=249 accepted=1005 processed=756 errors=0 (timeouts=0) rejected=0 avg_time=0.080 ms
+00:15:32.194 [master] STATISTICS: active=249 accepted=1005 processed=756 errors=0 (timeouts=0) rejected=0 avg_time=0.080 ms
+00:15:33.194 [master] STATISTICS: active=249 accepted=1005 processed=756 errors=0 (timeouts=0) rejected=0 avg_time=0.080 ms
+00:15:34.194 [master] STATISTICS: active=249 accepted=1005 processed=756 errors=0 (timeouts=0) rejected=0 avg_time=0.080 ms
+00:15:35.194 [master] STATISTICS: active=249 accepted=1005 processed=756 errors=0 (timeouts=0) rejected=0 avg_time=0.080 ms
+00:15:36.194 [master] STATISTICS: active=249 accepted=1005 processed=756 errors=0 (timeouts=0) rejected=0 avg_time=0.080 ms
+00:15:37.194 [master] STATISTICS: active=249 accepted=1005 processed=756 errors=0 (timeouts=0) rejected=0 avg_time=0.080 ms
+00:15:38.194 [master] STATISTICS: active=249 accepted=1005 processed=756 errors=0 (timeouts=0) rejected=0 avg_time=0.080 ms
+00:15:39.194 [master] STATISTICS: active=249 accepted=1005 processed=756 errors=0 (timeouts=0) rejected=0 avg_time=0.080 ms
+00:15:39.312 [p1.w01] #2 TIMEOUT: request not fully received within 10000 ms — disconnecting
+00:15:39.312 [p1.w03] #4 TIMEOUT: request not fully received within 10000 ms — disconnecting
+00:15:39.312 [p1.w02] #1 TIMEOUT: request not fully received within 10000 ms — disconnecting
+00:15:39.312 [p1.w04] #3 TIMEOUT: request not fully received within 10000 ms — disconnecting
+00:15:40.194 [master] STATISTICS: active=1 accepted=1005 processed=1000 errors=4 (timeouts=4) rejected=0 avg_time=0.064 ms
+00:15:41.194 [master] STATISTICS: active=1 accepted=1005 processed=1000 errors=4 (timeouts=4) rejected=0 avg_time=0.064 ms
+00:15:42.194 [master] STATISTICS: active=1 accepted=1005 processed=1000 errors=4 (timeouts=4) rejected=0 avg_time=0.064 ms
+00:15:43.194 [master] STATISTICS: active=1 accepted=1005 processed=1000 errors=4 (timeouts=4) rejected=0 avg_time=0.064 ms
+00:15:44.194 [master] STATISTICS: active=1 accepted=1005 processed=1000 errors=4 (timeouts=4) rejected=0 avg_time=0.064 ms
+00:15:45.194 [master] STATISTICS: active=1 accepted=1005 processed=1000 errors=4 (timeouts=4) rejected=0 avg_time=0.064 ms
+00:15:46.194 [master] STATISTICS: active=1 accepted=1005 processed=1000 errors=4 (timeouts=4) rejected=0 avg_time=0.064 ms
+00:15:47.194 [master] STATISTICS: active=1 accepted=1005 processed=1000 errors=4 (timeouts=4) rejected=0 avg_time=0.064 ms
+00:15:48.194 [master] STATISTICS: active=1 accepted=1005 processed=1000 errors=4 (timeouts=4) rejected=0 avg_time=0.064 ms
+00:15:49.194 [master] STATISTICS: active=1 accepted=1005 processed=1000 errors=4 (timeouts=4) rejected=0 avg_time=0.064 ms
+00:15:49.321 [p1.w01] #5 TIMEOUT: request not fully received within 10000 ms — disconnecting
+00:15:49.933 [master] received signal SIGINT
+00:15:49.933 [master] graceful shutdown started: SIGTERM to all worker processes (2)
+00:15:49.933 [p2    ] received SIGTERM — stopping accept loop
+00:15:49.933 [p1    ] received SIGTERM — stopping accept loop
+00:15:49.933 [p2    ] close: listening socket closed, draining active connections: 0
+00:15:49.933 [p1    ] close: listening socket closed, draining active connections: 0
+00:15:49.934 [p2    ] all pool threads finished, worker process exiting
+00:15:49.934 [p1    ] all pool threads finished, worker process exiting
+00:15:49.934 [master] worker process p1 (pid=380028) exited with code 0
+00:15:49.934 [master] worker process p2 (pid=380029) exited with code 0
+00:15:49.934 [master] all worker processes terminated
+00:15:49.934 [master]   p1: active=0 accepted=20093 processed=20088 errors=5 (timeouts=5) rejected=0 avg_time=0.120 ms
+00:15:49.934 [master]   p2: active=0 accepted=912 processed=912 errors=0 (timeouts=0) rejected=0 avg_time=0.950 ms
+00:15:49.934 [master] TOTAL STATISTICS: active=0 accepted=21005 processed=21000 errors=5 (timeouts=5) rejected=0 avg_time=0.156 ms
+00:15:49.934 [master] all sockets closed, server stopped

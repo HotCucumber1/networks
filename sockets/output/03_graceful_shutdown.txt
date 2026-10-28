@@ -1,0 +1,67 @@
+
+===== Клиент начинает запрос, через 1 с серверу приходит SIGINT, ещё через 2 с клиент дописывает число =====
+
+===== Новое подключение после SIGINT (должно быть отвергнуто) =====
+00:15:26.495 [client] starting: Dmitriy Rybakov
+Enter an integer from 1 to 100: 10
+00:15:26.495 [client] socket: TCP socket created (fd=3)
+00:15:26.495 [client] connect: connecting to 127.0.0.1:5555 ...
+00:15:26.498 [client] ERROR: connect: Connection refused
+00:15:26.498 [client] close: socket closed (fd=3)
+00:15:26.498 [client] could not connect to 127.0.0.1:5555
+Server of Dmitriy Rybakov|50
+
+код завершения сервера: 0
+
+===== Вывод сервера =====
+00:15:25.085 [master] starting: Server of Dmitriy Rybakov (pid=379939, port=5555, processes=2, threads each=4, timeout=10 s)
+00:15:25.085 [master] socket: listening socket created (fd=6)
+00:15:25.086 [master] bind: socket bound to 0.0.0.0:5555
+00:15:25.087 [master] listen: waiting for connections (backlog=4096)
+00:15:25.087 [master] fork: worker process p1 started (pid=379943)
+00:15:25.087 [master] fork: worker process p2 started (pid=379944)
+00:15:25.087 [master] started worker processes: 2 × 4 threads (Ctrl+C to stop)
+00:15:25.087 [p1.w01] pool thread started
+00:15:25.087 [p1.w02] pool thread started
+00:15:25.087 [p1.w03] pool thread started
+00:15:25.087 [p2.w01] pool thread started
+00:15:25.087 [p2.w02] pool thread started
+00:15:25.087 [p1    ] worker process ready (pid=379943, threads=4)
+00:15:25.087 [p1.w04] pool thread started
+00:15:25.087 [p2.w03] pool thread started
+00:15:25.087 [p2    ] worker process ready (pid=379944, threads=4)
+00:15:25.087 [p2.w04] pool thread started
+00:15:25.190 [p1    ] #1 accept: new connection from 127.0.0.1:47768 (fd=7)
+00:15:25.190 [p1.w01] #1 picked up for processing (127.0.0.1:47768, fd=7)
+00:15:26.191 [master] received signal SIGINT
+00:15:26.191 [master] graceful shutdown started: SIGTERM to all worker processes (2)
+00:15:26.191 [p2    ] received SIGTERM — stopping accept loop
+00:15:26.191 [p1    ] received SIGTERM — stopping accept loop
+00:15:26.191 [p2    ] close: listening socket closed, draining active connections: 0
+00:15:26.191 [p1    ] close: listening socket closed, draining active connections: 1
+00:15:26.191 [p2.w02] pool thread finished
+00:15:26.191 [p1.w03] pool thread finished
+00:15:26.191 [p2.w04] pool thread finished
+00:15:26.191 [p2.w03] pool thread finished
+00:15:26.191 [p1.w02] pool thread finished
+00:15:26.191 [p2.w01] pool thread finished
+00:15:26.191 [p1.w04] pool thread finished
+00:15:26.191 [p2    ] all pool threads finished, worker process exiting
+00:15:26.192 [master] worker process p2 (pid=379944) exited with code 0
+00:15:27.085 [master] STATISTICS: active=1 accepted=1 processed=0 errors=0 (timeouts=0) rejected=0 avg_time=0.000 ms
+00:15:28.190 [p1.w01] #1 recv: message received (25 bytes): "Client of Late Student|5"
+00:15:28.190 [p1.w01] #1 Client name   : Client of Late Student
+00:15:28.190 [p1.w01] #1 Server name   : Server of Dmitriy Rybakov
+00:15:28.190 [p1.w01] #1 Client number : 5
+00:15:28.190 [p1.w01] #1 Server number : 50
+00:15:28.190 [p1.w01] #1 Sum           : 55
+00:15:28.190 [p1.w01] #1 send: response sent (29 bytes): "Server of Dmitriy Rybakov|50"
+00:15:28.190 [p1.w01] #1 close: connection closed
+00:15:28.190 [p1.w01] pool thread finished
+00:15:28.190 [p1    ] all pool threads finished, worker process exiting
+00:15:28.191 [master] worker process p1 (pid=379943) exited with code 0
+00:15:28.191 [master] all worker processes terminated
+00:15:28.191 [master]   p1: active=0 accepted=1 processed=1 errors=0 (timeouts=0) rejected=0 avg_time=2999.999 ms
+00:15:28.191 [master]   p2: active=0 accepted=0 processed=0 errors=0 (timeouts=0) rejected=0 avg_time=0.000 ms
+00:15:28.191 [master] TOTAL STATISTICS: active=0 accepted=1 processed=1 errors=0 (timeouts=0) rejected=0 avg_time=2999.999 ms
+00:15:28.191 [master] all sockets closed, server stopped
