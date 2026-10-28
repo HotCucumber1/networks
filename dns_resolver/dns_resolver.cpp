@@ -256,7 +256,6 @@ public:
 		writer.WriteU8(0);
 	}
 
-	// Reads a name (following compression pointers) and leaves the reader right after it.
 	static std::string Decode(ByteReader& reader)
 	{
 		std::string name;
@@ -365,10 +364,6 @@ public:
 	}
 };
 
-// ============================================================================
-// DNS message model
-// ============================================================================
-
 struct DnsHeader
 {
 	uint16_t m_id = 0;
@@ -397,8 +392,8 @@ struct DnsRecord
 	uint16_t m_type = 0;
 	uint16_t m_class = 1;
 	uint32_t m_ttl = 0;
-	std::string m_text; // rdata as text
-	std::string m_target; // target name for NS/CNAME/MX
+	std::string m_text;
+	std::string m_target;
 };
 
 struct DnsMessage
@@ -410,10 +405,6 @@ struct DnsMessage
 	std::vector<DnsRecord> m_additional;
 };
 
-// ============================================================================
-// RDATA decoding
-// ============================================================================
-
 struct DecodedRdata
 {
 	std::string m_text;
@@ -423,7 +414,6 @@ struct DecodedRdata
 class RdataDecoder
 {
 public:
-	// Reads RDATA of the given length and always leaves the reader at its end.
 	DecodedRdata Decode(uint16_t type, ByteReader& reader, uint16_t length) const
 	{
 		size_t end = reader.Position() + length;
@@ -548,14 +538,10 @@ private:
 	}
 };
 
-// ============================================================================
-// Building and parsing DNS messages
-// ============================================================================
-
 struct QueryOptions
 {
-	uint16_t m_udpSize = 0; // 0 = no EDNS0 (classic 512-byte UDP limit)
-	bool m_dnssecOk = false; // DO bit in EDNS0
+	uint16_t m_udpSize = 0;
+	bool m_dnssecOk = false;
 };
 
 class DnsMessageBuilder
@@ -579,7 +565,7 @@ private:
 	static void WriteHeader(ByteWriter& writer, uint16_t id, bool edns)
 	{
 		writer.WriteU16(id);
-		writer.WriteU16(0x0000); // standard query, RD=0: we do the recursion ourselves
+		writer.WriteU16(0x0000);
 		writer.WriteU16(1);
 		writer.WriteU16(0);
 		writer.WriteU16(0);
@@ -590,14 +576,14 @@ private:
 	{
 		NameCodec::Encode(name, writer);
 		writer.WriteU16(type);
-		writer.WriteU16(1); // class IN
+		writer.WriteU16(1);
 	}
 
 	static void WriteOptRecord(ByteWriter& writer, const QueryOptions& options)
 	{
-		writer.WriteU8(0); // root name
+		writer.WriteU8(0);
 		writer.WriteU16(static_cast<uint16_t>(RecordType::OPT));
-		writer.WriteU16(options.m_udpSize); // CLASS field carries the UDP payload size
+		writer.WriteU16(options.m_udpSize);
 		writer.WriteU32(options.m_dnssecOk ? 0x00008000u : 0u);
 		writer.WriteU16(0);
 	}
@@ -675,10 +661,6 @@ private:
 		return record;
 	}
 };
-
-// ============================================================================
-// Sockets: RAII wrapper and I/O helpers
-// ============================================================================
 
 class Socket
 {
@@ -796,7 +778,6 @@ public:
 		SetBlocking(socket.Fd(), true);
 	}
 
-	// Waits until the descriptor is ready; throws when the deadline expires.
 	static void WaitFor(int fd, short events, const Deadline& deadline, const std::string& what)
 	{
 		pollfd descriptor{ fd, events, 0 };
@@ -845,10 +826,6 @@ private:
 	}
 };
 
-// ============================================================================
-// Transports: UDP and TCP (separate logic)
-// ============================================================================
-
 constexpr uint16_t kDnsPort = 53;
 
 class Transport
@@ -886,7 +863,6 @@ private:
 		}
 	}
 
-	// Reads datagrams until one carries our query ID (others are ignored).
 	std::vector<uint8_t> ReceiveMatching(const Socket& socket, const std::vector<uint8_t>& query) const
 	{
 		Deadline deadline(m_timeoutMs);
@@ -933,7 +909,6 @@ public:
 private:
 	int m_timeoutMs;
 
-	// In TCP every message is preceded by a 2-byte big-endian length.
 	static std::vector<uint8_t> FrameQuery(const std::vector<uint8_t>& query)
 	{
 		if (query.size() > 0xFFFF)
@@ -1005,10 +980,6 @@ private:
 	}
 };
 
-// ============================================================================
-// Query client: UDP -> (TC flag?) -> TCP
-// ============================================================================
-
 class DnsQueryClient
 {
 public:
@@ -1077,10 +1048,6 @@ private:
 		}
 	}
 };
-
-// ============================================================================
-// Resolution result and the TTL cache
-// ============================================================================
 
 struct ResultRecord
 {
@@ -1324,12 +1291,12 @@ enum class OutcomeKind
 struct ResponseOutcome
 {
 	OutcomeKind m_kind = OutcomeKind::ServerError;
-	std::vector<DnsRecord> m_records; // Answer/Cname: CNAME chain + data
-	std::string m_cnameTarget; // Cname: the name that is still to be resolved
-	std::string m_zone; // Referral: zone the NS records delegate
-	std::vector<std::string> m_nsNames; // Referral: name server names
-	std::vector<std::string> m_glue; // Referral: IPv4 addresses from the Additional section
-	std::string m_reason; // ServerError: description
+	std::vector<DnsRecord> m_records;
+	std::string m_cnameTarget;
+	std::string m_zone;
+	std::vector<std::string> m_nsNames;
+	std::vector<std::string> m_glue;
+	std::string m_reason;
 };
 
 class ResponseAnalyzer
@@ -1377,7 +1344,6 @@ private:
 		return record.m_type == RecordTypeConverter::ToCode(type);
 	}
 
-	// Walk the CNAME chain inside the Answer section until the requested data is found.
 	static std::optional<ResponseOutcome> FollowAnswers(
 		const DnsMessage& message,
 		const std::string& name,
@@ -1594,7 +1560,6 @@ private:
 		return records;
 	}
 
-	// Ask the servers one by one until somebody gives a usable response.
 	ResponseOutcome AskServers(const std::vector<std::string>& servers, const std::string& name, RecordType type)
 	{
 		std::string lastError = "no servers to ask";
@@ -1821,7 +1786,7 @@ private:
 		});
 		if (upper == "DNSSEC")
 		{
-			options.m_type = RecordType::DNSKEY; // DNSKEY + RRSIG, requested with the DO bit
+			options.m_type = RecordType::DNSKEY;
 			options.m_dnssec = true;
 		}
 		else
