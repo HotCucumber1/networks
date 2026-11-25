@@ -12,3 +12,6 @@ add_executable(sockets_client sockets/client.c)
 add_executable(sockets_loadtest sockets/loadtest.c)
 add_executable(rdt_sender rdtp_project/rdt_sender.cpp)
 add_executable(rdt_receiver rdtp_project/rdt_receiver.cpp)
+
+add_executable(udp_pinger_server udp_pinger/udp_pinger_server.cpp)
+add_executable(udp_pinger_client udp_pinger/udp_pinger_client.cpp)
