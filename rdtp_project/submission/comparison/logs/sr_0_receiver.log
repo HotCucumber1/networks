@@ -1,0 +1,4 @@
+[INFO] Receiver started on UDP port 19081, algorithm: SR
+[INFO] Transfer started, total packets: 64
+[INFO] File assembled successfully: /home/dmitriy.rybakov/study/networks/rdtp_project/submission/comparison_20261125_204528/received/sr_0.bin
+[INFO] Unique packets accepted: 64, duplicates: 0, invalid: 0

@@ -1,0 +1,9 @@
+algorithm,loss_percent,file_bytes,duration_seconds,throughput,retransmissions,sha256_ok,status
+GBN,0,65536,,,,YES,PASS
+SR,0,65536,,,,YES,PASS
+GBN,10,65536,,,,YES,PASS
+SR,10,65536,,,,YES,PASS
+GBN,20,65536,,,,YES,PASS
+SR,20,65536,,,,YES,PASS
+GBN,30,65536,,,,YES,PASS
+SR,30,65536,,,,YES,PASS

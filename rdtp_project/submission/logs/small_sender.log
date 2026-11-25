@@ -1,0 +1,9 @@
+[INFO] Transfer started: 40 B, packets: 1, algorithm: SR
+[DEBUG] Sent DATA #0, window [0, 0]
+[DEBUG] Received selective ACK #0
+
+[INFO] Transfer completed successfully
+[INFO] Time: 0.000418 sec., speed: 93.41 KiB/s
+[INFO] DATA sent: 1, retransmissions: 0, ACKs received: 1
+[INFO] RTT estimate: 0.123018 ms, final RTO: 100 ms
+[INFO] Metrics saved to rdtp_metrics.csv

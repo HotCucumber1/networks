@@ -1,0 +1,207 @@
+[INFO] Transfer started: 64.00 KiB, packets: 64, algorithm: GBN
+[DEBUG] Sent DATA #0, window [0, 0]
+[DEBUG] Received cumulative ACK #0, new base=1
+[DEBUG] Sent DATA #1, window [1, 2]
+[DEBUG] Sent DATA #2, window [1, 2]
+[DEBUG] Received cumulative ACK #1, new base=2
+[DEBUG] Lose simulation: DATA #3
+[DEBUG] Sent DATA #3, window [2, 5]
+[DEBUG] Sent DATA #4, window [2, 5]
+[DEBUG] Sent DATA #5, window [2, 5]
+[DEBUG] Received cumulative ACK #2, new base=3
+[DEBUG] Sent DATA #6, window [3, 10]
+[DEBUG] Lose simulation: DATA #7
+[DEBUG] Sent DATA #7, window [3, 10]
+[DEBUG] Sent DATA #8, window [3, 10]
+[DEBUG] Sent DATA #9, window [3, 10]
+[DEBUG] Sent DATA #10, window [3, 10]
+[DEBUG] Timeout on packet #3, retransmitting window
+[DEBUG] Lose simulation: RETX DATA #5
+[DEBUG] Congestion window reduced to 1, ssthresh=4.000000
+[DEBUG] Received cumulative ACK #3, new base=4
+[DEBUG] Received cumulative ACK #4, new base=5
+Progress: 7.8125% | window: 4.0 | retransmissions: 8[DEBUG] Timeout on packet #5, retransmitting window
+[DEBUG] Lose simulation: RETX DATA #5
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+Progress: 7.8% | window: 1.0 | retransmissions: 14[DEBUG] Timeout on packet #5, retransmitting window
+[DEBUG] Lose simulation: RETX DATA #5
+[DEBUG] Lose simulation: RETX DATA #8
+[DEBUG] Lose simulation: RETX DATA #10
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+Progress: 7.8% | window: 1.0 | retransmissions: 20Progress: 7.8% | window: 1.0 | retransmissions: 20Progress: 7.8% | window: 1.0 | retransmissions: 20[DEBUG] Timeout on packet #5, retransmitting window
+[DEBUG] Lose simulation: RETX DATA #7
+[DEBUG] Lose simulation: RETX DATA #10
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+[DEBUG] Received cumulative ACK #5, new base=6
+[DEBUG] Received cumulative ACK #6, new base=7
+Progress: 10.9% | window: 2.5 | retransmissions: 26Progress: 10.9% | window: 2.5 | retransmissions: 26Progress: 10.9% | window: 2.5 | retransmissions: 26Progress: 10.9% | window: 2.5 | retransmissions: 26Progress: 10.9% | window: 2.5 | retransmissions: 26Progress: 10.9% | window: 2.5 | retransmissions: 26[DEBUG] Timeout on packet #7, retransmitting window
+[DEBUG] Lose simulation: RETX DATA #7
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+Progress: 10.9% | window: 1.0 | retransmissions: 30Progress: 10.9% | window: 1.0 | retransmissions: 30Progress: 10.9% | window: 1.0 | retransmissions: 30Progress: 10.9% | window: 1.0 | retransmissions: 30Progress: 10.9% | window: 1.0 | retransmissions: 30Progress: 10.9% | window: 1.0 | retransmissions: 30Progress: 10.9% | window: 1.0 | retransmissions: 30Progress: 10.9% | window: 1.0 | retransmissions: 30Progress: 10.9% | window: 1.0 | retransmissions: 30Progress: 10.9% | window: 1.0 | retransmissions: 30Progress: 10.9% | window: 1.0 | retransmissions: 30Progress: 10.9% | window: 1.0 | retransmissions: 30Progress: 10.9% | window: 1.0 | retransmissions: 30[DEBUG] Timeout on packet #7, retransmitting window
+[DEBUG] Lose simulation: RETX DATA #9
+[DEBUG] Lose simulation: RETX DATA #10
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+[DEBUG] Received cumulative ACK #7, new base=8
+[DEBUG] Received cumulative ACK #8, new base=9
+Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34Progress: 14.1% | window: 2.5 | retransmissions: 34[DEBUG] Timeout on packet #9, retransmitting window
+[DEBUG] Lose simulation: RETX DATA #9
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36Progress: 14.1% | window: 1.0 | retransmissions: 36[DEBUG] Timeout on packet #9, retransmitting window
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+[DEBUG] Received cumulative ACK #9, new base=10
+[DEBUG] Sent DATA #11, window [10, 11]
+[DEBUG] Received cumulative ACK #10, new base=11
+[DEBUG] Sent DATA #12, window [11, 12]
+[DEBUG] Received cumulative ACK #11, new base=12
+[DEBUG] Sent DATA #13, window [12, 13]
+[DEBUG] Received cumulative ACK #12, new base=13
+[DEBUG] Sent DATA #14, window [13, 15]
+[DEBUG] Lose simulation: DATA #15
+[DEBUG] Sent DATA #15, window [13, 15]
+[DEBUG] Received cumulative ACK #13, new base=14
+[DEBUG] Sent DATA #16, window [14, 16]
+[DEBUG] Received cumulative ACK #14, new base=15
+[DEBUG] Lose simulation: DATA #17
+[DEBUG] Sent DATA #17, window [15, 17]
+[DEBUG] Timeout on packet #15, retransmitting window
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+Progress: 23.4% | window: 1.0 | retransmissions: 41[DEBUG] Received cumulative ACK #15, new base=16
+[DEBUG] Received cumulative ACK #16, new base=17
+[DEBUG] Sent DATA #18, window [17, 18]
+[DEBUG] Received cumulative ACK #17, new base=18
+[DEBUG] Sent DATA #19, window [18, 19]
+[DEBUG] Received cumulative ACK #18, new base=19
+[DEBUG] Lose simulation: DATA #20
+[DEBUG] Sent DATA #20, window [19, 21]
+[DEBUG] Sent DATA #21, window [19, 21]
+[DEBUG] Received cumulative ACK #19, new base=20
+[DEBUG] Sent DATA #22, window [20, 22]
+[DEBUG] Timeout on packet #20, retransmitting window
+[DEBUG] Lose simulation: RETX DATA #20
+[DEBUG] Lose simulation: RETX DATA #22
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+Progress: 31.2% | window: 1.0 | retransmissions: 44[DEBUG] Timeout on packet #20, retransmitting window
+[DEBUG] Lose simulation: RETX DATA #20
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+Progress: 31.2% | window: 1.0 | retransmissions: 47[DEBUG] Timeout on packet #20, retransmitting window
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+[DEBUG] Received cumulative ACK #20, new base=21
+[DEBUG] Received cumulative ACK #21, new base=22
+[DEBUG] Sent DATA #23, window [22, 23]
+[DEBUG] Received cumulative ACK #22, new base=23
+[DEBUG] Sent DATA #24, window [23, 24]
+[DEBUG] Received cumulative ACK #23, new base=24
+[DEBUG] Sent DATA #25, window [24, 26]
+[DEBUG] Sent DATA #26, window [24, 26]
+[DEBUG] Received cumulative ACK #24, new base=25
+[DEBUG] Sent DATA #27, window [25, 27]
+[DEBUG] Received cumulative ACK #25, new base=26
+[DEBUG] Sent DATA #28, window [26, 28]
+[DEBUG] Received cumulative ACK #26, new base=27
+[DEBUG] Sent DATA #29, window [27, 30]
+[DEBUG] Lose simulation: DATA #30
+[DEBUG] Sent DATA #30, window [27, 30]
+[DEBUG] Received cumulative ACK #27, new base=28
+[DEBUG] Sent DATA #31, window [28, 31]
+[DEBUG] Received cumulative ACK #28, new base=29
+[DEBUG] Sent DATA #32, window [29, 32]
+[DEBUG] Received cumulative ACK #29, new base=30
+[DEBUG] Sent DATA #33, window [30, 33]
+Progress: 46.9% | window: 4.8 | retransmissions: 50[DEBUG] Timeout on packet #30, retransmitting window
+[DEBUG] Lose simulation: RETX DATA #31
+[DEBUG] Congestion window reduced to 1, ssthresh=2.394354
+[DEBUG] Received cumulative ACK #30, new base=31
+[DEBUG] Timeout on packet #31, retransmitting window
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+[DEBUG] Received cumulative ACK #31, new base=32
+[DEBUG] Received cumulative ACK #32, new base=33
+[DEBUG] Sent DATA #34, window [33, 34]
+[DEBUG] Received cumulative ACK #33, new base=34
+[DEBUG] Sent DATA #35, window [34, 35]
+[DEBUG] Received cumulative ACK #34, new base=35
+[DEBUG] Sent DATA #36, window [35, 37]
+[DEBUG] Lose simulation: DATA #37
+[DEBUG] Sent DATA #37, window [35, 37]
+[DEBUG] Received cumulative ACK #35, new base=36
+[DEBUG] Sent DATA #38, window [36, 38]
+[DEBUG] Received cumulative ACK #36, new base=37
+[DEBUG] Sent DATA #39, window [37, 39]
+Progress: 57.8% | window: 3.8 | retransmissions: 57[DEBUG] Timeout on packet #37, retransmitting window
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+[DEBUG] Received cumulative ACK #37, new base=38
+[DEBUG] Received cumulative ACK #38, new base=39
+[DEBUG] Sent DATA #40, window [39, 40]
+[DEBUG] Received cumulative ACK #39, new base=40
+[DEBUG] Sent DATA #41, window [40, 41]
+[DEBUG] Received cumulative ACK #40, new base=41
+[DEBUG] Sent DATA #42, window [41, 43]
+[DEBUG] Sent DATA #43, window [41, 43]
+[DEBUG] Received cumulative ACK #41, new base=42
+[DEBUG] Sent DATA #44, window [42, 44]
+[DEBUG] Received cumulative ACK #42, new base=43
+[DEBUG] Sent DATA #45, window [43, 45]
+[DEBUG] Received cumulative ACK #43, new base=44
+[DEBUG] Lose simulation: DATA #46
+[DEBUG] Sent DATA #46, window [44, 47]
+[DEBUG] Sent DATA #47, window [44, 47]
+[DEBUG] Received cumulative ACK #44, new base=45
+[DEBUG] Sent DATA #48, window [45, 48]
+[DEBUG] Received cumulative ACK #45, new base=46
+[DEBUG] Sent DATA #49, window [46, 49]
+[DEBUG] Timeout on packet #46, retransmitting window
+[DEBUG] Lose simulation: RETX DATA #47
+[DEBUG] Congestion window reduced to 1, ssthresh=2.284942
+[DEBUG] Received cumulative ACK #46, new base=47
+Progress: 73.4% | window: 2.0 | retransmissions: 64[DEBUG] Timeout on packet #47, retransmitting window
+[DEBUG] Lose simulation: RETX DATA #48
+[DEBUG] Lose simulation: RETX DATA #49
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+[DEBUG] Received cumulative ACK #47, new base=48
+Progress: 75.0% | window: 2.0 | retransmissions: 67[DEBUG] Timeout on packet #48, retransmitting window
+[DEBUG] Lose simulation: RETX DATA #48
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+Progress: 75.0% | window: 1.0 | retransmissions: 69Progress: 75.0% | window: 1.0 | retransmissions: 69Progress: 75.0% | window: 1.0 | retransmissions: 69[DEBUG] Timeout on packet #48, retransmitting window
+[DEBUG] Lose simulation: RETX DATA #49
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+Progress: 75.0% | window: 1.0 | retransmissions: 71[DEBUG] Received cumulative ACK #48, new base=49
+[DEBUG] Lose simulation: DATA #50
+[DEBUG] Sent DATA #50, window [49, 50]
+Progress: 76.6% | window: 2.0 | retransmissions: 71Progress: 76.6% | window: 2.0 | retransmissions: 71Progress: 76.6% | window: 2.0 | retransmissions: 71Progress: 76.6% | window: 2.0 | retransmissions: 71Progress: 76.6% | window: 2.0 | retransmissions: 71Progress: 76.6% | window: 2.0 | retransmissions: 71[DEBUG] Timeout on packet #49, retransmitting window
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+[DEBUG] Received cumulative ACK #49, new base=50
+[DEBUG] Sent DATA #51, window [50, 51]
+[DEBUG] Received cumulative ACK #50, new base=51
+[DEBUG] Sent DATA #52, window [51, 52]
+[DEBUG] Received cumulative ACK #51, new base=52
+[DEBUG] Sent DATA #53, window [52, 53]
+[DEBUG] Received cumulative ACK #52, new base=53
+[DEBUG] Sent DATA #54, window [53, 55]
+[DEBUG] Lose simulation: DATA #55
+[DEBUG] Sent DATA #55, window [53, 55]
+[DEBUG] Received cumulative ACK #53, new base=54
+[DEBUG] Sent DATA #56, window [54, 56]
+[DEBUG] Received cumulative ACK #54, new base=55
+[DEBUG] Sent DATA #57, window [55, 57]
+[DEBUG] Timeout on packet #55, retransmitting window
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+[DEBUG] Received cumulative ACK #55, new base=56
+[DEBUG] Received cumulative ACK #56, new base=57
+[DEBUG] Sent DATA #58, window [57, 58]
+[DEBUG] Received cumulative ACK #57, new base=58
+[DEBUG] Sent DATA #59, window [58, 59]
+[DEBUG] Received cumulative ACK #58, new base=59
+[DEBUG] Sent DATA #60, window [59, 61]
+[DEBUG] Sent DATA #61, window [59, 61]
+[DEBUG] Received cumulative ACK #59, new base=60
+[DEBUG] Sent DATA #62, window [60, 62]
+[DEBUG] Received cumulative ACK #60, new base=61
+[DEBUG] Sent DATA #63, window [61, 63]
+[DEBUG] Received cumulative ACK #61, new base=62
+[DEBUG] Received cumulative ACK #62, new base=63
+[DEBUG] Received cumulative ACK #63, new base=64
+
+[INFO] Transfer completed successfully
+[INFO] Time: 20.797915 sec., speed: 3.08 KiB/s
+[INFO] DATA sent: 140, retransmissions: 76, ACKs received: 110
+[INFO] RTT estimate: 0.022533 ms, final RTO: 100 ms
+[INFO] Metrics saved to rdtp_metrics.csv

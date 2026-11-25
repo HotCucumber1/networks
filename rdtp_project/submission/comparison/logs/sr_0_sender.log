@@ -1,0 +1,135 @@
+[INFO] Transfer started: 64.00 KiB, packets: 64, algorithm: SR
+[DEBUG] Sent DATA #0, window [0, 0]
+[DEBUG] Received selective ACK #0
+[DEBUG] Sent DATA #1, window [1, 2]
+[DEBUG] Sent DATA #2, window [1, 2]
+[DEBUG] Received selective ACK #1
+[DEBUG] Sent DATA #3, window [2, 4]
+[DEBUG] Sent DATA #4, window [2, 4]
+[DEBUG] Received selective ACK #2
+[DEBUG] Sent DATA #5, window [3, 6]
+[DEBUG] Sent DATA #6, window [3, 6]
+[DEBUG] Received selective ACK #3
+[DEBUG] Sent DATA #7, window [4, 8]
+[DEBUG] Sent DATA #8, window [4, 8]
+[DEBUG] Received selective ACK #4
+[DEBUG] Sent DATA #9, window [5, 10]
+[DEBUG] Sent DATA #10, window [5, 10]
+[DEBUG] Received selective ACK #5
+[DEBUG] Sent DATA #11, window [6, 12]
+[DEBUG] Sent DATA #12, window [6, 12]
+[DEBUG] Received selective ACK #6
+[DEBUG] Sent DATA #13, window [7, 14]
+[DEBUG] Sent DATA #14, window [7, 14]
+[DEBUG] Received selective ACK #7
+[DEBUG] Sent DATA #15, window [8, 16]
+[DEBUG] Sent DATA #16, window [8, 16]
+[DEBUG] Received selective ACK #8
+[DEBUG] Sent DATA #17, window [9, 18]
+[DEBUG] Sent DATA #18, window [9, 18]
+[DEBUG] Received selective ACK #9
+[DEBUG] Sent DATA #19, window [10, 20]
+[DEBUG] Sent DATA #20, window [10, 20]
+[DEBUG] Received selective ACK #10
+[DEBUG] Sent DATA #21, window [11, 22]
+[DEBUG] Sent DATA #22, window [11, 22]
+[DEBUG] Received selective ACK #11
+[DEBUG] Sent DATA #23, window [12, 24]
+[DEBUG] Sent DATA #24, window [12, 24]
+[DEBUG] Received selective ACK #12
+[DEBUG] Sent DATA #25, window [13, 26]
+[DEBUG] Sent DATA #26, window [13, 26]
+[DEBUG] Received selective ACK #13
+[DEBUG] Sent DATA #27, window [14, 28]
+[DEBUG] Sent DATA #28, window [14, 28]
+[DEBUG] Received selective ACK #14
+[DEBUG] Sent DATA #29, window [15, 30]
+[DEBUG] Sent DATA #30, window [15, 30]
+[DEBUG] Received selective ACK #15
+[DEBUG] Sent DATA #31, window [16, 32]
+[DEBUG] Sent DATA #32, window [16, 32]
+[DEBUG] Received selective ACK #16
+[DEBUG] Sent DATA #33, window [17, 34]
+[DEBUG] Sent DATA #34, window [17, 34]
+[DEBUG] Received selective ACK #17
+[DEBUG] Sent DATA #35, window [18, 36]
+[DEBUG] Sent DATA #36, window [18, 36]
+[DEBUG] Received selective ACK #18
+[DEBUG] Sent DATA #37, window [19, 38]
+[DEBUG] Sent DATA #38, window [19, 38]
+[DEBUG] Received selective ACK #19
+[DEBUG] Sent DATA #39, window [20, 40]
+[DEBUG] Sent DATA #40, window [20, 40]
+[DEBUG] Received selective ACK #20
+[DEBUG] Sent DATA #41, window [21, 42]
+[DEBUG] Sent DATA #42, window [21, 42]
+[DEBUG] Received selective ACK #21
+[DEBUG] Sent DATA #43, window [22, 44]
+[DEBUG] Sent DATA #44, window [22, 44]
+[DEBUG] Received selective ACK #22
+[DEBUG] Sent DATA #45, window [23, 46]
+[DEBUG] Sent DATA #46, window [23, 46]
+[DEBUG] Received selective ACK #23
+[DEBUG] Sent DATA #47, window [24, 48]
+[DEBUG] Sent DATA #48, window [24, 48]
+[DEBUG] Received selective ACK #24
+[DEBUG] Sent DATA #49, window [25, 50]
+[DEBUG] Sent DATA #50, window [25, 50]
+[DEBUG] Received selective ACK #25
+[DEBUG] Sent DATA #51, window [26, 52]
+[DEBUG] Sent DATA #52, window [26, 52]
+[DEBUG] Received selective ACK #26
+[DEBUG] Sent DATA #53, window [27, 54]
+[DEBUG] Sent DATA #54, window [27, 54]
+[DEBUG] Received selective ACK #27
+[DEBUG] Sent DATA #55, window [28, 56]
+[DEBUG] Sent DATA #56, window [28, 56]
+[DEBUG] Received selective ACK #28
+[DEBUG] Sent DATA #57, window [29, 58]
+[DEBUG] Sent DATA #58, window [29, 58]
+[DEBUG] Received selective ACK #29
+[DEBUG] Sent DATA #59, window [30, 60]
+[DEBUG] Sent DATA #60, window [30, 60]
+[DEBUG] Received selective ACK #30
+[DEBUG] Sent DATA #61, window [31, 62]
+[DEBUG] Sent DATA #62, window [31, 62]
+[DEBUG] Received selective ACK #31
+[DEBUG] Sent DATA #63, window [32, 63]
+[DEBUG] Received selective ACK #32
+[DEBUG] Received selective ACK #33
+[DEBUG] Received selective ACK #34
+[DEBUG] Received selective ACK #35
+[DEBUG] Received selective ACK #36
+[DEBUG] Received selective ACK #37
+[DEBUG] Received selective ACK #38
+[DEBUG] Received selective ACK #39
+[DEBUG] Received selective ACK #40
+[DEBUG] Received selective ACK #41
+[DEBUG] Received selective ACK #42
+[DEBUG] Received selective ACK #43
+[DEBUG] Received selective ACK #44
+[DEBUG] Received selective ACK #45
+[DEBUG] Received selective ACK #46
+[DEBUG] Received selective ACK #47
+[DEBUG] Received selective ACK #48
+[DEBUG] Received selective ACK #49
+[DEBUG] Received selective ACK #50
+[DEBUG] Received selective ACK #51
+[DEBUG] Received selective ACK #52
+[DEBUG] Received selective ACK #53
+[DEBUG] Received selective ACK #54
+[DEBUG] Received selective ACK #55
+[DEBUG] Received selective ACK #56
+[DEBUG] Received selective ACK #57
+[DEBUG] Received selective ACK #58
+[DEBUG] Received selective ACK #59
+[DEBUG] Received selective ACK #60
+[DEBUG] Received selective ACK #61
+[DEBUG] Received selective ACK #62
+[DEBUG] Received selective ACK #63
+
+[INFO] Transfer completed successfully
+[INFO] Time: 0.002188 sec., speed: 28.57 MiB/s
+[INFO] DATA sent: 64, retransmissions: 0, ACKs received: 64
+[INFO] RTT estimate: 0.573812 ms, final RTO: 100 ms
+[INFO] Metrics saved to rdtp_metrics.csv

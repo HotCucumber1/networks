@@ -1,0 +1,167 @@
+[INFO] Transfer started: 64.00 KiB, packets: 64, algorithm: SR
+[DEBUG] Sent DATA #0, window [0, 0]
+[DEBUG] Received selective ACK #0
+[DEBUG] Sent DATA #1, window [1, 2]
+[DEBUG] Sent DATA #2, window [1, 2]
+[DEBUG] Received selective ACK #1
+[DEBUG] Lose simulation: DATA #3
+[DEBUG] Sent DATA #3, window [2, 4]
+[DEBUG] Lose simulation: DATA #4
+[DEBUG] Sent DATA #4, window [2, 4]
+[DEBUG] Received selective ACK #2
+[DEBUG] Sent DATA #5, window [3, 6]
+[DEBUG] Sent DATA #6, window [3, 6]
+[DEBUG] Received selective ACK #5
+[DEBUG] Sent DATA #7, window [3, 7]
+[DEBUG] Received selective ACK #6
+[DEBUG] Sent DATA #8, window [3, 8]
+[DEBUG] Received selective ACK #7
+[DEBUG] Sent DATA #9, window [3, 9]
+[DEBUG] Received selective ACK #8
+[DEBUG] Lose simulation: DATA #10
+[DEBUG] Sent DATA #10, window [3, 10]
+[DEBUG] Received selective ACK #9
+[DEBUG] Sent DATA #11, window [3, 11]
+[DEBUG] Received selective ACK #11
+[DEBUG] Sent DATA #12, window [3, 12]
+[DEBUG] Received selective ACK #12
+[DEBUG] Sent DATA #13, window [3, 13]
+[DEBUG] Received selective ACK #13
+[DEBUG] Sent DATA #14, window [3, 14]
+[DEBUG] Received selective ACK #14
+[DEBUG] Lose simulation: DATA #15
+[DEBUG] Sent DATA #15, window [3, 15]
+[DEBUG] Timeout on packet #3, selective retransmission
+[DEBUG] Timeout on packet #4, selective retransmission
+[DEBUG] Timeout on packet #10, selective retransmission
+[DEBUG] Timeout on packet #15, selective retransmission
+[DEBUG] Congestion window reduced to 1, ssthresh=6.500000
+[DEBUG] Received selective ACK #3
+[DEBUG] Received selective ACK #4
+[DEBUG] Received selective ACK #10
+[DEBUG] Sent DATA #16, window [15, 18]
+[DEBUG] Sent DATA #17, window [15, 18]
+[DEBUG] Sent DATA #18, window [15, 18]
+[DEBUG] Received selective ACK #15
+[DEBUG] Sent DATA #19, window [16, 20]
+[DEBUG] Sent DATA #20, window [16, 20]
+[DEBUG] Received selective ACK #16
+[DEBUG] Sent DATA #21, window [17, 22]
+[DEBUG] Sent DATA #22, window [17, 22]
+[DEBUG] Received selective ACK #17
+[DEBUG] Lose simulation: DATA #23
+[DEBUG] Sent DATA #23, window [18, 24]
+[DEBUG] Sent DATA #24, window [18, 24]
+[DEBUG] Received selective ACK #18
+[DEBUG] Sent DATA #25, window [19, 25]
+[DEBUG] Received selective ACK #19
+[DEBUG] Sent DATA #26, window [20, 26]
+[DEBUG] Received selective ACK #20
+[DEBUG] Sent DATA #27, window [21, 27]
+[DEBUG] Received selective ACK #21
+[DEBUG] Sent DATA #28, window [22, 28]
+[DEBUG] Received selective ACK #22
+[DEBUG] Lose simulation: DATA #29
+[DEBUG] Sent DATA #29, window [23, 29]
+[DEBUG] Received selective ACK #24
+[DEBUG] Received selective ACK #25
+[DEBUG] Received selective ACK #26
+[DEBUG] Sent DATA #30, window [23, 30]
+[DEBUG] Received selective ACK #27
+[DEBUG] Received selective ACK #28
+[DEBUG] Received selective ACK #30
+[DEBUG] Timeout on packet #23, selective retransmission
+[DEBUG] Timeout on packet #29, selective retransmission
+[DEBUG] Congestion window reduced to 1, ssthresh=4.218660
+[DEBUG] Received selective ACK #23
+[DEBUG] Received selective ACK #29
+[DEBUG] Sent DATA #31, window [31, 33]
+[DEBUG] Sent DATA #32, window [31, 33]
+[DEBUG] Lose simulation: DATA #33
+[DEBUG] Sent DATA #33, window [31, 33]
+[DEBUG] Received selective ACK #31
+[DEBUG] Sent DATA #34, window [32, 35]
+[DEBUG] Lose simulation: DATA #35
+[DEBUG] Sent DATA #35, window [32, 35]
+[DEBUG] Received selective ACK #32
+[DEBUG] Sent DATA #36, window [33, 37]
+[DEBUG] Sent DATA #37, window [33, 37]
+[DEBUG] Received selective ACK #34
+[DEBUG] Received selective ACK #36
+[DEBUG] Received selective ACK #37
+Progress: 51.5625% | window: 5.6 | retransmissions: 6[DEBUG] Timeout on packet #33, selective retransmission
+[DEBUG] Timeout on packet #35, selective retransmission
+[DEBUG] Congestion window reduced to 1, ssthresh=2.788879
+[DEBUG] Received selective ACK #33
+[DEBUG] Received selective ACK #35
+[DEBUG] Sent DATA #38, window [38, 40]
+[DEBUG] Sent DATA #39, window [38, 40]
+[DEBUG] Sent DATA #40, window [38, 40]
+[DEBUG] Received selective ACK #38
+[DEBUG] Sent DATA #41, window [39, 41]
+[DEBUG] Received selective ACK #39
+[DEBUG] Sent DATA #42, window [40, 42]
+[DEBUG] Received selective ACK #40
+[DEBUG] Sent DATA #43, window [41, 43]
+[DEBUG] Received selective ACK #41
+[DEBUG] Sent DATA #44, window [42, 45]
+[DEBUG] Sent DATA #45, window [42, 45]
+[DEBUG] Received selective ACK #42
+[DEBUG] Sent DATA #46, window [43, 46]
+[DEBUG] Received selective ACK #43
+[DEBUG] Sent DATA #47, window [44, 47]
+[DEBUG] Received selective ACK #44
+[DEBUG] Sent DATA #48, window [45, 48]
+[DEBUG] Received selective ACK #45
+[DEBUG] Sent DATA #49, window [46, 50]
+[DEBUG] Sent DATA #50, window [46, 50]
+[DEBUG] Received selective ACK #46
+[DEBUG] Lose simulation: DATA #51
+[DEBUG] Sent DATA #51, window [47, 51]
+[DEBUG] Received selective ACK #47
+[DEBUG] Sent DATA #52, window [48, 52]
+[DEBUG] Received selective ACK #48
+[DEBUG] Sent DATA #53, window [49, 53]
+[DEBUG] Received selective ACK #49
+[DEBUG] Lose simulation: DATA #54
+[DEBUG] Sent DATA #54, window [50, 54]
+[DEBUG] Received selective ACK #50
+[DEBUG] Sent DATA #55, window [51, 55]
+[DEBUG] Received selective ACK #52
+[DEBUG] Sent DATA #56, window [51, 56]
+[DEBUG] Received selective ACK #53
+[DEBUG] Received selective ACK #55
+[DEBUG] Received selective ACK #56
+[DEBUG] Timeout on packet #51, selective retransmission
+[DEBUG] Timeout on packet #54, selective retransmission
+[DEBUG] Congestion window reduced to 1, ssthresh=3.309635
+[DEBUG] Received selective ACK #51
+[DEBUG] Received selective ACK #54
+[DEBUG] Lose simulation: DATA #57
+[DEBUG] Sent DATA #57, window [57, 59]
+[DEBUG] Sent DATA #58, window [57, 59]
+[DEBUG] Sent DATA #59, window [57, 59]
+[DEBUG] Received selective ACK #58
+[DEBUG] Sent DATA #60, window [57, 60]
+[DEBUG] Received selective ACK #59
+[DEBUG] Received selective ACK #60
+[DEBUG] Timeout on packet #57, selective retransmission
+[DEBUG] Congestion window reduced to 1, ssthresh=2.242647
+[DEBUG] Received selective ACK #57
+[DEBUG] Sent DATA #61, window [61, 62]
+[DEBUG] Lose simulation: DATA #62
+[DEBUG] Sent DATA #62, window [61, 62]
+[DEBUG] Received selective ACK #61
+[DEBUG] Lose simulation: DATA #63
+[DEBUG] Sent DATA #63, window [62, 64]
+Progress: 96.9% | window: 3.0 | retransmissions: 11[DEBUG] Timeout on packet #62, selective retransmission
+[DEBUG] Timeout on packet #63, selective retransmission
+[DEBUG] Congestion window reduced to 1, ssthresh=2.000000
+[DEBUG] Received selective ACK #62
+[DEBUG] Received selective ACK #63
+
+[INFO] Transfer completed successfully
+[INFO] Time: 0.606068 sec., speed: 105.60 KiB/s
+[INFO] DATA sent: 77, retransmissions: 13, ACKs received: 64
+[INFO] RTT estimate: 0.031185 ms, final RTO: 200 ms
+[INFO] Metrics saved to rdtp_metrics.csv

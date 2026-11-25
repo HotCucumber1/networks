@@ -1,0 +1,4 @@
+elapsed_ms,cwnd,throughput_kbps,rtt_ms,base,next_sequence,retransmissions
+261,4,94.1609,0.017832,3,16,4
+524,1,422.107,0.100904,27,32,7
+787,5.39003,416.366,0.0968832,40,45,8
