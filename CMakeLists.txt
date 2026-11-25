@@ -15,3 +15,17 @@ add_executable(rdt_receiver rdtp_project/rdt_receiver.cpp)
 
 add_executable(udp_pinger_server udp_pinger/udp_pinger_server.cpp)
 add_executable(udp_pinger_client udp_pinger/udp_pinger_client.cpp)
+
+add_executable(proxy_server
+        web_proxy/src/main.cpp
+        web_proxy/src/HttpParser.cpp
+        web_proxy/src/SocketUtils.cpp
+        web_proxy/src/CacheManager.cpp
+        web_proxy/src/ThreadPool.cpp
+        web_proxy/src/Logger.cpp
+        web_proxy/src/ProxyStatistics.cpp
+        web_proxy/src/HttpProxyServer.cpp
+)
+target_include_directories(proxy_server PRIVATE include)
+find_package(Threads REQUIRED)
+target_link_libraries(proxy_server PRIVATE Threads::Threads)
